@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+
+    function fizzBuzz() {
+    	var input = document.getElementById("inputTextArea").value;
+        
+        var highestNumber = input;
+        var numberSet = "";
+        
+        for(var i = 1; i <= highestNumber; i++) {
+            if(i % 5 == 0 && i % 3 == 0) {
+                numberSet = numberSet.concat("FizzBuzz");
+                if(i != highestNumber){
+                    numberSet = numberSet.concat(", ");
+                }
+            } else if(i % 3 == 0) {
+                numberSet = numberSet.concat("Fizz");
+                if(i != highestNumber){
+                    numberSet = numberSet.concat(", ");
+                }
+            } else if(i % 5 == 0) {
+                numberSet = numberSet.concat("Buzz");
+                if(i != highestNumber){
+                    numberSet = numberSet.concat(", ");
+                }
+            } else {
+                numberSet = numberSet.concat(i);
+                if(i != highestNumber){
+                    numberSet = numberSet.concat(", ");
+                }
+            }
+        }
+        
+        document.getElementById("solutionTextArea").value = numberSet;
+    }
+</script>
+
+    <h2>Enter any number, then click FizzBuzz!</h2>
+    <textarea id="inputTextArea" rows="1" cols="50"></textarea>
+    <br>
+    <button type="button" onclick="fizzBuzz()">FizzBuzz!</button>
+    <p>Solution:</p>
+    <textarea id="solutionTextArea" rows="10" cols="150" readonly></textarea>
+</body>
+</html>
